@@ -20,7 +20,7 @@ describe('<TransactionCard />', () => {
     })
   })
 
-  it('should have value outcome when `saida` is selected', async () => {
+  it('should have selected value', async () => {
     render(<TransactionCard onTransaction={onTransaction} />)
 
     const select = screen.getByRole('combobox', { name: /tipo/i })
