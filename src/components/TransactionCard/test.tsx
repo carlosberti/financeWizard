@@ -10,6 +10,16 @@ describe('<TransactionCard />', () => {
     jest.clearAllMocks()
   })
 
+  it('should have value income as select default value', async () => {
+    render(<TransactionCard onTransaction={onTransaction} />)
+
+    const select = screen.getByRole('combobox', { name: /tipo/i })
+
+    await waitFor(() => {
+      expect(select).toHaveValue('income')
+    })
+  })
+
   it('should have value outcome when `saida` is selected', async () => {
     render(<TransactionCard onTransaction={onTransaction} />)
 
@@ -22,26 +32,6 @@ describe('<TransactionCard />', () => {
   })
 
   it('should send input and select values when button is clicked', async () => {
-    render(<TransactionCard onTransaction={onTransaction} />)
-
-    const input = screen.getByRole('textbox')
-    const select = screen.getByRole('combobox', { name: /tipo/i })
-    const button = screen.getByRole('button', { name: /fazer transação/i })
-    userEvent.type(input, '3000')
-
-    await waitFor(() => {
-      expect(input).toHaveValue('3000')
-      expect(select).toHaveValue('income')
-      userEvent.click(button)
-      expect(onTransaction).toHaveBeenCalledTimes(1)
-    })
-    expect(onTransaction).toHaveBeenCalledWith({
-      value: '3000',
-      type: 'income'
-    })
-  })
-
-  it('should set initialValue to input and select after send', async () => {
     render(<TransactionCard onTransaction={onTransaction} />)
 
     const input = screen.getByRole('textbox')
@@ -74,7 +64,7 @@ describe('<TransactionCard />', () => {
     })
   })
 
-  it('should reset input and select value on successfully transaction', async () => {
+  it('should reset input value on successfully transaction', async () => {
     render(<TransactionCard onTransaction={onTransaction} />)
 
     const input = screen.getByRole('textbox')
