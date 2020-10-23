@@ -1,5 +1,5 @@
-import { render } from '@testing-library/react'
-// import userEvent from '@testing-library/user-event'
+import { screen, render } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 import Select from '.'
 
@@ -21,16 +21,50 @@ describe('<Select />', () => {
     jest.clearAllMocks()
   })
 
-  it('should reset input and select value on successfully transaction', async () => {
+  it('should have passed label', () => {
     render(
       <Select
         label="Tipo"
         labelFor="select"
         options={Options}
-        value="Entrada"
+        defaultValue="Entrada"
         onSelect={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(e)}
       />
     )
-    expect(1).toBe(1)
+
+    expect(screen.getByLabelText('Tipo')).toBeInTheDocument()
+  })
+
+  it('should have defaultValue selected by default', () => {
+    render(
+      <Select
+        label="Tipo"
+        labelFor="select"
+        options={Options}
+        defaultValue="Entrada"
+        onSelect={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(e)}
+      />
+    )
+
+    const select = screen.getByRole('combobox')
+
+    expect(select).toHaveValue('income')
+  })
+
+  it('should have selected Value', () => {
+    render(
+      <Select
+        label="Tipo"
+        labelFor="select"
+        options={Options}
+        defaultValue="Entrada"
+        onSelect={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(e)}
+      />
+    )
+
+    const select = screen.getByRole('combobox')
+    userEvent.selectOptions(select, 'Saída')
+
+    expect(select).toHaveValue('outcome')
   })
 })
