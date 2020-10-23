@@ -1,23 +1,46 @@
-import { createGlobalStyle } from 'styled-components'
+import {
+  createGlobalStyle,
+  css,
+  DefaultTheme,
+  GlobalStyleComponent
+} from 'styled-components'
 
-const GlobalStyles = createGlobalStyle`
+type GlobalStylesProps = {
+  removeBg?: boolean
+}
+
+const GlobalStyles: GlobalStyleComponent<
+  GlobalStylesProps,
+  DefaultTheme
+> = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &::before,
+    &::after {
+      box-sizing: inherit;
+    }
   }
 
-  html {
-    font-size: 62.5%;
-  }
-
-  html, body, #__next {
+  body, html {
+    width: 100%;
     height: 100%;
   }
 
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  }
+  html {
+      font-size: 62.5%;
+    }
+    ${({ removeBg }) => css`
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1.6rem;
+        background: ${removeBg ? 'unset' : `#1C2124`};
+      }
+    `}
 `
 
 export default GlobalStyles

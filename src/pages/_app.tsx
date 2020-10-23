@@ -1,20 +1,21 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
-
 import GlobalStyles from 'styles/global'
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>React Avançado - boilerplate</title>
-        <link rel="shortcut icon" href="/img/icon-512.png" />
-        <link rel="apple-touch-icon" href="/img/icon-512.png" />
-        <link rel="manifest" href="/manifest.json" />
+        <title>Finance Wizard </title>
+        <link
+          rel="shortcut icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#129497;</text></svg>"
+        />
         <meta
           name="description"
-          content="A simple project starter to work with TypeScript, React, NextJS and Styled Components"
+          content="A web app made to help you control your finances"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
