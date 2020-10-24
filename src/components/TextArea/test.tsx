@@ -19,7 +19,7 @@ describe('<TextArea />', () => {
       />
     )
 
-    expect(screen.getByLabelText(/descrição/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/descrição*/i)).toBeInTheDocument()
   })
 
   it('should have typed value', async () => {
