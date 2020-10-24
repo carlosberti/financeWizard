@@ -6,7 +6,7 @@ import * as s from './styles'
 import TextArea from 'components/TextArea'
 
 export type TransactionCardProps = {
-  onTransaction: ({ value }: SingleTransactionProps) => void
+  onTransaction: ({ value, description }: SingleTransactionProps) => void
 }
 
 export type SingleTransactionProps = {

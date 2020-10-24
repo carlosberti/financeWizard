@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   background-color: #ebf0ec;
   padding: 1.6rem;
-  width: 50%;
   max-width: 56rem;
   border-radius: 0.4rem;
   > label {
