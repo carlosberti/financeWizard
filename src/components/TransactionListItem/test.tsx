@@ -5,9 +5,9 @@ import TransactionListItem from '.'
 
 describe('<TransactionListItem />', () => {
   it('should have passed value', () => {
-    render(<TransactionListItem value="3000" description="qualquer coisa" />)
+    render(<TransactionListItem value="3.000" description="qualquer coisa" />)
 
-    expect(screen.getByText(/3000/i)).toBeInTheDocument()
+    expect(screen.getByText(/3\.000/i)).toBeInTheDocument()
   })
 
   it('should not have description if not clicked', () => {
@@ -28,19 +28,23 @@ describe('<TransactionListItem />', () => {
     })
   })
 
-  it('should have green dollar icon if value is positive', async () => {
-    render(<TransactionListItem value="3000" description="qualquer coisa" />)
+  it('should render with green color if value is positive', () => {
+    const { container } = render(
+      <TransactionListItem value="3000" description="qualquer coisa" />
+    )
 
-    const icon = screen.getByTestId('dollarIcon')
-
-    expect(icon.getAttribute('color')).toBe('green')
+    expect(container.firstChild).toHaveStyle({
+      'background-color': '#9CDB1D'
+    })
   })
 
-  it('should have red dollar icon if value is negative', async () => {
-    render(<TransactionListItem value="-3000" description="qualquer coisa" />)
+  it('should render with red color if value is negative', () => {
+    const { container } = render(
+      <TransactionListItem value="-3000" description="qualquer coisa" />
+    )
 
-    const icon = screen.getByTestId('dollarIcon')
-
-    expect(icon.getAttribute('color')).toBe('red')
+    expect(container.firstChild).toHaveStyle({
+      background: '#EB3705'
+    })
   })
 })
