@@ -27,7 +27,10 @@ const TextField = ({
 
   return (
     <>
-      <s.Label htmlFor={labelFor}>{label}</s.Label>
+      <s.Label htmlFor={labelFor}>
+        {label}
+        <span>*</span>
+      </s.Label>
       <s.InputWrapper>
         <s.Currency>R$ </s.Currency>
         <s.Input
@@ -36,7 +39,6 @@ const TextField = ({
           name={name}
           placeholder={placeholder}
           id={labelFor}
-          error={error}
           value={value}
         />
       </s.InputWrapper>
