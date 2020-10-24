@@ -1,14 +1,10 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.header`
-  background: linear-gradient(
-    90deg,
-    rgba(25, 24, 77, 1) 0%,
-    rgba(4, 121, 187, 1) 100%
-  );
-  border-bottom: 0.2rem solid lightgray;
-  padding: 0.8rem;
+  background-color: rgb(102, 111, 139);
+  border-bottom: 0.1rem solid black;
+  padding: 0.8rem 3.2rem;
   > h1 {
-    color: white;
+    color: black;
   }
 `
