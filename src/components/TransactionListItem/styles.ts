@@ -1,5 +1,4 @@
 import styled, { css, keyframes } from 'styled-components'
-import { DollarCircle } from '@styled-icons/boxicons-regular'
 import { HandIndex } from '@styled-icons/bootstrap'
 
 const DropDownDescription = keyframes`
@@ -13,18 +12,20 @@ const DropDownDescription = keyframes`
   }
 `
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
-  width: 100%;
-  padding: 1.6rem;
-  background-color: #ebf0ec;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  &:hover {
-    background-color: #ebf0ec;
-    opacity: 0.5;
-  }
+export const Wrapper = styled.div<{ isPositive: boolean }>`
+  ${({ isPositive }) => css`
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    padding: 1.6rem;
+    background-color: ${isPositive ? '#9bf542' : '#f55442'};
+    border-radius: 0.4rem;
+    cursor: pointer;
+    &:hover {
+      background-color: #ebf0ec;
+      opacity: 0.5;
+    }
+  `}
 `
 
 const WrapperContentModifier = {
@@ -53,27 +54,14 @@ export const WrapperValue = styled.div`
 
 export const Value = styled.h1`
   font-size: 1.6rem;
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 540px) {
     font-size: 2.4rem;
   }
 `
 
-export const Icon = styled(DollarCircle)<{ color: 'red' | 'green' }>`
-  ${({ color }) => css`
-    color: ${color === 'red' ? '#d10a0a' : '#34eb83'};
-    width: 1.8rem;
-    height: 1.8rem;
-    margin-left: 0.4rem;
-    @media screen and (min-width: 720px) {
-      width: 2.4rem;
-      height: 2.4rem;
-    }
-  `}
-`
-
 export const DescriptionArea = styled.h2`
   font-size: 1.6rem;
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 540px) {
     font-size: 2.2rem;
   }
 `
@@ -83,7 +71,7 @@ export const Description = styled.h3`
   font-size: 1.4rem;
   text-align: left;
   margin: 1.6rem 1.6rem 0;
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 540px) {
     font-size: 2rem;
     margin: 1.6rem 2.4rem 0;
   }
@@ -94,7 +82,7 @@ export const Description = styled.h3`
 export const HandIcon = styled(HandIndex)`
   width: 1.6rem;
   height: 1.6rem;
-  @media screen and (min-width: 720px) {
+  @media screen and (min-width: 540px) {
     width: 2.4rem;
     height: 2.4rem;
   }
