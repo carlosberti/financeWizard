@@ -1,31 +1,9 @@
 import { screen, render } from '@testing-library/react'
 
 import TransactionList from '.'
+import { transactions } from 'mocks'
 
 describe('<TransactionList />', () => {
-  const transactions = [
-    {
-      value: '3000',
-      description: 'primero'
-    },
-    {
-      value: '3000',
-      description: 'segundo'
-    },
-    {
-      value: '3000',
-      description: 'terceiro'
-    },
-    {
-      value: '3000',
-      description: 'quarto'
-    },
-    {
-      value: '3000',
-      description: 'quinto'
-    }
-  ]
-
   it('should render transactionListItems', () => {
     render(<TransactionList transactions={transactions} />)
 
