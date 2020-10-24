@@ -14,6 +14,12 @@ export const Error = styled.span`
   font-size: 1.2rem;
 `
 
+export const InputWrapper = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+`
+
 export const Input = styled.input<{ error: boolean }>`
   ${({ error }) => css`
     font-size: 2.4rem;
@@ -25,8 +31,15 @@ export const Input = styled.input<{ error: boolean }>`
     ${error && `margin-bottom: 1.6rem`}
 
     ::placeholder {
+      font-size: 1.6rem;
       color: black;
       opacity: 1;
     }
   `}
+`
+
+export const Currency = styled.span`
+  font-size: 2.4rem;
+  margin-right: 0.2rem;
+  font-weight: 600;
 `
