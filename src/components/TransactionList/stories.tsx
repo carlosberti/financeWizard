@@ -19,5 +19,7 @@ export default {
 } as Meta
 
 export const Default: Story<TransactionListProps> = args => (
-  <TransactionList {...args} />
+  <div style={{ margin: '0 auto' }}>
+    <TransactionList {...args} />
+  </div>
 )
