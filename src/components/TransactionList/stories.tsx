@@ -1,28 +1,6 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 import TransactionList, { TransactionListProps } from '.'
-
-const transactions = [
-  {
-    value: '3000',
-    description: 'primero'
-  },
-  {
-    value: '3000',
-    description: 'segundo'
-  },
-  {
-    value: '3000',
-    description: 'terceiro'
-  },
-  {
-    value: '3000',
-    description: 'quarto'
-  },
-  {
-    value: '3000',
-    description: 'quinto'
-  }
-]
+import { transactions } from 'mocks'
 
 export default {
   title: 'TransactionList',
