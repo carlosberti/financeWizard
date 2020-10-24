@@ -38,7 +38,7 @@ const GlobalStyles: GlobalStyleComponent<
       body {
         font-family: Arial, Helvetica, sans-serif;
         font-size: 1.6rem;
-        background: ${removeBg ? 'unset' : `#1C2124`};
+        background: ${removeBg ? 'unset' : `#E8E8E8`};
       }
     `}
 `
