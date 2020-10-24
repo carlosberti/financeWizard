@@ -9,52 +9,31 @@ describe('<TransactionCard />', () => {
   afterEach(() => {
     jest.clearAllMocks()
   })
-
-  it('should have value income as select default value', async () => {
+  it('should send input and description values when button is clicked', async () => {
     render(<TransactionCard onTransaction={onTransaction} />)
 
-    const select = screen.getByRole('combobox', { name: /tipo/i })
-
-    await waitFor(() => {
-      expect(select).toHaveValue('income')
-    })
-  })
-
-  it('should have selected value', async () => {
-    render(<TransactionCard onTransaction={onTransaction} />)
-
-    const select = screen.getByRole('combobox', { name: /tipo/i })
-    userEvent.selectOptions(select, 'Saída')
-
-    await waitFor(() => {
-      expect(select).toHaveValue('outcome')
-    })
-  })
-
-  it('should send input and select values when button is clicked', async () => {
-    render(<TransactionCard onTransaction={onTransaction} />)
-
-    const input = screen.getByRole('textbox')
-    const select = screen.getByRole('combobox', { name: /tipo/i })
+    const input = screen.getByRole('textbox', { name: /gasto/i })
+    const textArea = screen.getByRole('textbox', { name: /descrição/i })
     const button = screen.getByRole('button', { name: /fazer transação/i })
     userEvent.type(input, '3000')
+    userEvent.type(textArea, 'qualquer coisa')
 
     await waitFor(() => {
       expect(input).toHaveValue('3000')
-      expect(select).toHaveValue('income')
+      expect(textArea).toHaveValue('qualquer coisa')
       userEvent.click(button)
       expect(onTransaction).toHaveBeenCalledTimes(1)
     })
     expect(onTransaction).toHaveBeenCalledWith({
       value: '3000',
-      type: 'income'
+      description: 'qualquer coisa'
     })
   })
 
-  it('should not send input and select if input was filled wrong', async () => {
+  it('should not send input if input was filled wrong', async () => {
     render(<TransactionCard onTransaction={onTransaction} />)
 
-    const input = screen.getByRole('textbox')
+    const input = screen.getByRole('textbox', { name: /gasto/i })
     const button = screen.getByRole('button', { name: /fazer transação/i })
     userEvent.type(input, 'text')
     userEvent.click(button)
@@ -67,10 +46,11 @@ describe('<TransactionCard />', () => {
   it('should reset input value on successfully transaction', async () => {
     render(<TransactionCard onTransaction={onTransaction} />)
 
-    const input = screen.getByRole('textbox')
-    const select = screen.getByRole('combobox', { name: /tipo/i })
+    const input = screen.getByRole('textbox', { name: /gasto/i })
+    const textArea = screen.getByRole('textbox', { name: /descrição/i })
     const button = screen.getByRole('button', { name: /fazer transação/i })
     userEvent.type(input, '3000')
+    userEvent.type(textArea, 'qualquer coisa')
     userEvent.click(button)
 
     await waitFor(() => {
@@ -78,6 +58,6 @@ describe('<TransactionCard />', () => {
     })
 
     expect(input).toHaveValue('')
-    expect(select).toHaveValue('income')
+    expect(textArea).toHaveValue('')
   })
 })
