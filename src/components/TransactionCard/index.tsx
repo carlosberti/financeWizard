@@ -1,34 +1,23 @@
-import Select from 'components/Select'
-import TextField from 'components/TextField'
 import React from 'react'
-import { InputHTMLAttributes } from 'react'
+
+import TextField from 'components/TextField'
 import isValidValues from 'utils/isValidValues'
 import * as s from './styles'
+import TextArea from 'components/TextArea'
 
 export type TransactionCardProps = {
-  onTransaction: ({ value, type }: SingleTransactionProps) => void
-} & InputHTMLAttributes<HTMLInputElement>
+  onTransaction: ({ value }: SingleTransactionProps) => void
+}
 
 export type SingleTransactionProps = {
   value: string
-  type: 'income' | 'outcome'
+  description: string
 }
 
 const initialValue: SingleTransactionProps = {
   value: '',
-  type: 'income'
+  description: ''
 }
-
-const Options = [
-  {
-    value: 'income',
-    text: 'Entrada'
-  },
-  {
-    value: 'outcome',
-    text: 'Saída'
-  }
-]
 
 const TransactionCard = ({ onTransaction }: TransactionCardProps) => {
   const [singletransaction, setSingleTransaction] = React.useState<
@@ -37,7 +26,7 @@ const TransactionCard = ({ onTransaction }: TransactionCardProps) => {
   const [error, setError] = React.useState(false)
 
   const onChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target
     setSingleTransaction(prev => ({
@@ -66,12 +55,11 @@ const TransactionCard = ({ onTransaction }: TransactionCardProps) => {
         error={error}
         value={singletransaction.value}
       />
-      <Select
-        label="Tipo"
-        labelFor="type"
-        defaultValue={singletransaction.type}
-        onSelect={(e: React.ChangeEvent<HTMLSelectElement>) => onChange(e)}
-        options={Options}
+      <TextArea
+        label="Descrição"
+        labelFor="description"
+        onTextArea={(e: React.ChangeEvent<HTMLTextAreaElement>) => onChange(e)}
+        value={singletransaction.description}
       />
       <s.TransactionButton type="submit" onClick={onClick}>
         Fazer transação
