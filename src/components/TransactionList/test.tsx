@@ -7,6 +7,6 @@ describe('<TransactionList />', () => {
   it('should render transactionListItems', () => {
     render(<TransactionList transactions={transactions} />)
 
-    expect(screen.getAllByRole('heading', { name: /3,000/i })).toHaveLength(5)
+    expect(screen.getAllByRole('heading', { name: /3\.000/i })).toHaveLength(5)
   })
 })
