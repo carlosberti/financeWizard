@@ -8,7 +8,7 @@ export const Label = styled.label`
   cursor: pointer;
 
   > span {
-    color: red;
+    color: #cf4444;
   }
 `
 
