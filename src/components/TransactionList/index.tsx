@@ -8,7 +8,7 @@ type Transaction = {
 }
 
 export type TransactionListProps = {
-  transactions: Transaction[]
+  transactions: Transaction[] | null
 } & TextareaHTMLAttributes<HTMLTextAreaElement>
 
 const TransactionList = ({ transactions }: TransactionListProps) => {
