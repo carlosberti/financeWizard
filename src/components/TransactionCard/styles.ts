@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.section`
   background-color: #ebf0ec;
   padding: 1.6rem;
-  max-width: 56rem;
+  flex: 1;
+
+  @media screen and (min-width: 980px) {
+    max-width: 67rem;
+  }
   border-radius: 0.4rem;
   > label {
     :not(:first-child) {
