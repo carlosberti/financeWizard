@@ -8,12 +8,12 @@ export const Label = styled.label`
   cursor: pointer;
 
   > span {
-    color: red;
+    color: #cf4444;
   }
 `
 
 export const Error = styled.span`
-  color: red;
+  color: #cf4444;
   font-size: 1.2rem;
 `
 

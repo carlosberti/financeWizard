@@ -18,7 +18,7 @@ const TextField = ({
   error,
   name = 'value',
   value,
-  placeholder = 'Valor da transação sem usar vírgula',
+  placeholder = 'Valor da transação',
   onInput
 }: TextFieldProps) => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
