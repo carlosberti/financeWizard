@@ -1,15 +1,15 @@
 import React from 'react'
 import * as s from './styles'
 
-export type ListTransactionItemProps = {
-  description?: string
+export type TransactionListItemProps = {
+  description: string
   value: string
 }
 
-const ListTransactionItem = ({
+const TransactionListItem = ({
   description,
   value
-}: ListTransactionItemProps) => {
+}: TransactionListItemProps) => {
   const newValue = Number(value).toFixed(2).toLocaleString()
   const [showDescription, setShowDescription] = React.useState<boolean>(false)
 
@@ -38,4 +38,4 @@ const ListTransactionItem = ({
   )
 }
 
-export default ListTransactionItem
+export default TransactionListItem
