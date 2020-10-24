@@ -21,7 +21,7 @@ describe('<TextField />', () => {
       />
     )
 
-    expect(screen.getByLabelText('Gasto')).toBeInTheDocument()
+    expect(screen.getByLabelText('Gasto*')).toBeInTheDocument()
   })
 
   it('should have typed value', async () => {
@@ -67,7 +67,7 @@ describe('<TextField />', () => {
       />
     )
 
-    const label = screen.getByLabelText('Gasto')
+    const label = screen.getByLabelText('Gasto*')
     userEvent.click(label)
 
     expect(screen.getByRole('textbox')).toHaveFocus()
