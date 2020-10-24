@@ -4,13 +4,13 @@ const isValidValues = (
   singleTransaction: SingleTransactionProps,
   onValidate: (error: boolean) => void
 ): boolean => {
-  const value = Number(singleTransaction.value).toFixed(2).toLocaleString()
+  const value = singleTransaction.value
   const description = singleTransaction.description
 
   if (
     description.length < 1 ||
-    value.match(/^-?\d+(,\d{3})*(\.\d{1,2})?$/) === null ||
-    Number(value) === 0.0
+    value.match(/^-?\d+(\.\d{3})*(,\d{1,2})?$/) === null ||
+    Number(value) === 0
   ) {
     onValidate(true)
     return false
