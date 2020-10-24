@@ -1,10 +1,10 @@
 export const transactions = [
   {
-    value: '3000',
+    value: '-3000',
     description: 'primero'
   },
   {
-    value: '3000',
+    value: '3000.50',
     description: 'segundo'
   },
   {

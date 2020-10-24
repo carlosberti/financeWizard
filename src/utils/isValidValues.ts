@@ -4,18 +4,14 @@ const isValidValues = (
   singleTransaction: SingleTransactionProps,
   onValidate: (error: boolean) => void
 ): boolean => {
-  // const date = singleTransaction.date
-  const value = singleTransaction.value
-  // const year = new Date().getFullYear()
+  const value = Number(singleTransaction.value).toFixed(2).toLocaleString()
+  const description = singleTransaction.description
 
-  // if (
-  //   date.length < 3 ||
-  //   parseInt(date.split('/')[2]) < 1910 ||
-  //   parseInt(date.split('/')[2]) > year
-  // ) {
-  //   return false
-  // }
-  if (value.match(/^\d+(,\d{3})*(\.\d{1,2})?$/) === null) {
+  if (
+    description.length < 1 ||
+    value.match(/^-?\d+(,\d{3})*(\.\d{1,2})?$/) === null ||
+    Number(value) === 0.0
+  ) {
     onValidate(true)
     return false
   }
