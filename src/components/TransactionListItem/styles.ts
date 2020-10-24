@@ -18,7 +18,7 @@ export const Wrapper = styled.div<{ isPositive: boolean }>`
     flex-flow: column nowrap;
     width: 100%;
     padding: 1.6rem;
-    background-color: ${isPositive ? '#9bf542' : '#f55442'};
+    background-color: ${isPositive ? '#9CDB1D' : '#EB3705'};
     border-radius: 0.4rem;
     cursor: pointer;
     &:hover {
@@ -75,7 +75,7 @@ export const Description = styled.h3`
     font-size: 2rem;
     margin: 1.6rem 2.4rem 0;
   }
-  color: #6e6a6a;
+  opacity: 0.8;
   animation: ${DropDownDescription} 0.3s ease-in-out;
 `
 

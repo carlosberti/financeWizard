@@ -17,7 +17,7 @@ export default {
 } as Meta
 
 export const Default: Story<TransactionListItemProps> = args => (
-  <div style={{ maxWidth: '688px' }}>
+  <div style={{ maxWidth: '688px', margin: '0 auto' }}>
     <TransactionListItem {...args} />
   </div>
 )

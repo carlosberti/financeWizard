@@ -10,7 +10,6 @@ const TransactionListItem = ({
   description,
   value
 }: TransactionListItemProps) => {
-  const newValue = Number(value).toLocaleString()
   const [showDescription, setShowDescription] = React.useState<boolean>(false)
 
   const handleListClick = () => {
@@ -18,10 +17,10 @@ const TransactionListItem = ({
   }
 
   return (
-    <s.Wrapper isPositive={Number(value) > 0} onClick={handleListClick}>
+    <s.Wrapper isPositive={parseInt(value) > 0} onClick={handleListClick}>
       <s.WrapperContent showDescription={showDescription}>
         <s.WrapperValue>
-          <s.Value>R$ {newValue}</s.Value>
+          <s.Value>R$ {value}</s.Value>
         </s.WrapperValue>
 
         <s.DescriptionArea>
