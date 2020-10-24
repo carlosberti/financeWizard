@@ -14,12 +14,8 @@ describe('<Header />', () => {
   it('should render header with defined background', () => {
     const { container } = render(<Header />)
 
-    expect(container).toHaveStyle({
-      background: `linear-gradient(
-      90deg,
-      rgba(25, 24, 77, 1) 0%,
-      rgba(4, 121, 187, 1) 100%
-    )`
+    expect(container.firstChild).toHaveStyle({
+      backgroundColor: 'rgb(102, 111, 139)'
     })
   })
 })
