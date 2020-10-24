@@ -55,6 +55,7 @@ const TransactionCard = ({ onTransaction }: TransactionCardProps) => {
         error={error}
         value={singletransaction.value}
       />
+      <s.Example>Exemplo: 3.000,01 (3 mil e 1 centavo)</s.Example>
       <TextArea
         label="Descrição"
         labelFor="description"

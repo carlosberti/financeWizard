@@ -10,7 +10,7 @@ export default {
 } as Meta
 
 export const Default: Story<TransactionCardProps> = args => (
-  <div style={{ maxWidth: '34rem' }}>
+  <div style={{ maxWidth: '34rem', margin: '0 auto' }}>
     <TransactionCard {...args} />
   </div>
 )

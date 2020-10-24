@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Wrapper = styled.section`
-  background-color: #ebf0ec;
+  background-color: rgb(166, 175, 202);
   padding: 1.6rem;
   flex: 1;
 
@@ -14,6 +14,10 @@ export const Wrapper = styled.section`
       margin-top: 1.6rem;
     }
   }
+`
+
+export const Example = styled.p`
+  margin-top: 0.4rem;
 `
 
 export const TransactionButton = styled.button`
