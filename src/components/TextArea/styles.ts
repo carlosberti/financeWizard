@@ -6,6 +6,10 @@ export const Label = styled.label`
   color: black;
   font-weight: 700;
   cursor: pointer;
+
+  > span {
+    color: red;
+  }
 `
 
 export const TextArea = styled.textarea`

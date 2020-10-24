@@ -22,7 +22,10 @@ const TextArea = ({
 
   return (
     <>
-      <s.Label htmlFor={labelFor}>{label}</s.Label>
+      <s.Label htmlFor={labelFor}>
+        {label}
+        <span>*</span>
+      </s.Label>
       <s.TextArea
         placeholder="Descreva sua transação..."
         onChange={onChange}
