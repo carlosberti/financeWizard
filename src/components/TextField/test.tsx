@@ -56,7 +56,7 @@ describe('<TextField />', () => {
     expect(screen.getByText(/alguma coisa deu errada/i)).toBeInTheDocument()
   })
 
-  it('should focus on input when label cliked', async () => {
+  it('should focus on input when label cliked', () => {
     render(
       <TextField
         label="Gasto"
@@ -73,7 +73,7 @@ describe('<TextField />', () => {
     expect(screen.getByRole('textbox')).toHaveFocus()
   })
 
-  it('should focus on input when tab pressed', async () => {
+  it('should focus on input when tab pressed', () => {
     render(
       <TextField
         label="Gasto"
