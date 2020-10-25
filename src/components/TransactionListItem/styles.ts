@@ -3,7 +3,7 @@ import { HandIndex } from '@styled-icons/bootstrap'
 
 const DropDownDescription = keyframes`
   from {
-    transform: translateY(-1.2rem);
+    transform: translateY(1.2rem);
     opacity: 0
   },
   to {
@@ -29,8 +29,8 @@ export const Wrapper = styled.div<{ isPositive: boolean }>`
 
 const WrapperContentModifier = {
   showDescription: css`
-    padding-bottom: 0.8rem;
-    border-bottom: 0.1rem solid grey;
+    padding-top: 0.8rem;
+    border-top: 0.1rem solid grey;
   `
 }
 
@@ -66,13 +66,12 @@ export const DescriptionArea = styled.h2`
 `
 
 export const Description = styled.h3`
-  margin-top: 1.6rem;
   font-size: 1.4rem;
   text-align: left;
-  margin: 1.6rem 1.6rem 0;
+  margin: 0 1.6rem 1.6rem;
   @media screen and (min-width: 540px) {
     font-size: 2rem;
-    margin: 1.6rem 2.4rem 0;
+    margin: 0 2.4rem 1.6rem;
   }
   opacity: 0.8;
   animation: ${DropDownDescription} 0.3s ease-in-out;

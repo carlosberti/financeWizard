@@ -7,7 +7,7 @@ export default {
   args: {
     value: '30000',
     description:
-      'qualquer coisa qualquer coisaqualquer coisa qualquer coisa qualquer coisaqualquer coisa qualquer coisa qualquer coisaqualquer coisa qualquer coisa qualquer coisaqualquer coisa qualquer coisa qualquer coisaqualquer coisa'
+      'Uma compra qualquer Uma compra qualquer Uma compra qualquer Uma compra qualquer Uma compra qualquer Uma compra qualquer Uma compra qualquer Uma compra qualquer Uma compra qualquer '
   },
   parameters: {
     backgrounds: {
