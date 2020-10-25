@@ -15,14 +15,13 @@ const DropDownDescription = keyframes`
 export const Wrapper = styled.div<{ isPositive: boolean }>`
   ${({ isPositive }) => css`
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column-reverse nowrap;
     width: 100%;
     padding: 1.6rem;
     background-color: ${isPositive ? '#9CDB1D' : '#EB3705'};
     border-radius: 0.4rem;
     cursor: pointer;
     &:hover {
-      background-color: #ebf0ec;
       opacity: 0.5;
     }
   `}

@@ -16,11 +16,20 @@ const TransactionListItem = ({
     setShowDescription(prev => !prev)
   }
 
+  const money = parseFloat(value.replace(/\./g, '').replace(/,/g, '.'))
+
+  const formatMoney = () => {
+    if (money.toLocaleString('pt-br').includes(','))
+      return money.toLocaleString('pt-br')
+
+    return money.toLocaleString('pt-br') + ',00'
+  }
+
   return (
-    <s.Wrapper isPositive={parseInt(value) > 0} onClick={handleListClick}>
+    <s.Wrapper isPositive={money > 0} onClick={handleListClick}>
       <s.WrapperContent showDescription={showDescription}>
         <s.WrapperValue>
-          <s.Value>R$ {value.toLocaleString()}</s.Value>
+          <s.Value>R$ {formatMoney()}</s.Value>
         </s.WrapperValue>
 
         <s.DescriptionArea>
