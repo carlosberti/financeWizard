@@ -5,7 +5,7 @@ export default {
   title: 'Header',
   component: Header,
   args: {
-    balance: '3878946'
+    balance: '38789467'
   }
 } as Meta
 
