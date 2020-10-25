@@ -52,21 +52,21 @@ export const WrapperValue = styled.div`
 `
 
 export const Value = styled.h1`
-  font-size: 1.6rem;
+  font-size: 2rem;
   @media screen and (min-width: 540px) {
     font-size: 2.4rem;
   }
 `
 
 export const DescriptionArea = styled.h2`
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   @media screen and (min-width: 540px) {
     font-size: 2.2rem;
   }
 `
 
 export const Description = styled.h3`
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   text-align: left;
   margin: 0 1.6rem 1.6rem;
   @media screen and (min-width: 540px) {
@@ -78,8 +78,8 @@ export const Description = styled.h3`
 `
 
 export const HandIcon = styled(HandIndex)`
-  width: 1.6rem;
-  height: 1.6rem;
+  width: 2rem;
+  height: 2rem;
   @media screen and (min-width: 540px) {
     width: 2.4rem;
     height: 2.4rem;
