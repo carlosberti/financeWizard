@@ -62,7 +62,7 @@ const TransactionCard = ({ onTransaction }: TransactionCardProps) => {
         onTextArea={(e: React.ChangeEvent<HTMLTextAreaElement>) => onChange(e)}
         value={singletransaction.description}
       />
-      <s.TransactionButton type="submit" onClick={onClick}>
+      <s.TransactionButton onClick={onClick}>
         Fazer transação
       </s.TransactionButton>
     </s.Wrapper>
