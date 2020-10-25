@@ -55,7 +55,7 @@ const Home = () => {
           }
         />
 
-        <TransactionList transactions={transactions} />
+        {transactions && <TransactionList transactions={transactions} />}
       </s.Wrapper>
     </>
   )
