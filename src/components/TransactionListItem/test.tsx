@@ -7,7 +7,7 @@ describe('<TransactionListItem />', () => {
   it('should have passed value', () => {
     render(<TransactionListItem value="3.000" description="qualquer coisa" />)
 
-    expect(screen.getByText(/3\.000/i)).toBeInTheDocument()
+    expect(screen.getByText(/3,000/i)).toBeInTheDocument()
   })
 
   it('should not have description if not clicked', () => {
