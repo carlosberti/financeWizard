@@ -7,12 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@storybook-deploy
+        uses: actions/checkout@master
 
-      - name: Build and deploy to storybook-static branch
+      - name: Build and deploy to storybook-deploy branch
         uses: JamesIves/github-pages-deploy-action@2.0.3
         env:
-          ACCESS_TOKEN: ${{ secrets.BDOUGIE_TOKEN }}
-          BRANCH: storybook-static
-          FOLDER: storybook-static
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: storybook-deploy
+          FOLDER: docs-build
           BUILD_SCRIPT: npm install && npm run build-storybook
