@@ -20,7 +20,7 @@ const TransactionListItem = ({
     <s.Wrapper isPositive={parseInt(value) > 0} onClick={handleListClick}>
       <s.WrapperContent showDescription={showDescription}>
         <s.WrapperValue>
-          <s.Value>R$ {value}</s.Value>
+          <s.Value>R$ {value.toLocaleString()}</s.Value>
         </s.WrapperValue>
 
         <s.DescriptionArea>
