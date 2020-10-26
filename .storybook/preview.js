@@ -1,10 +1,14 @@
 import GlobalStyles from 'styles/global'
+import { transactions } from 'mocks'
+import { transactionsContext } from 'contexts/transactions'
 
 export const decorators = [
-  (Story) => (
+  Story => (
     <>
       <GlobalStyles removeBg />
-      <Story />
+      <transactionsContext.Provider value={{ transactions }}>
+        <Story />
+      </transactionsContext.Provider>
     </>
   )
 ]
