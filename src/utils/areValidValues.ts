@@ -1,6 +1,6 @@
 import { SingleTransactionProps } from 'components/TransactionCard'
 
-const isValidValues = (
+const areValidValues = (
   singleTransaction: SingleTransactionProps,
   onValidate: (error: boolean) => void
 ): boolean => {
@@ -19,4 +19,4 @@ const isValidValues = (
   return true
 }
 
-export default isValidValues
+export default areValidValues
