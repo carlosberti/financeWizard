@@ -1,61 +1,20 @@
 import Header from 'components/Header'
 import TransactionCard from 'components/TransactionCard'
 import TransactionList from 'components/TransactionList'
+import useTransactions from 'hooks/useTransactions'
 import React from 'react'
 import * as s from './styles'
 
-type Transaction = {
-  value: string
-  description: string
-}
-
 const Home = () => {
-  const [transactions, setTransactions] = React.useState<Transaction[] | null>(
-    null
-  )
-
-  React.useEffect(() => {
-    const localValues = localStorage.getItem('localTransactions')
-
-    localValues && setTransactions(JSON.parse(localValues).reverse())
-  }, [])
-
-  const onTransaction = ({ value, description }: Transaction) => {
-    const newTransaction: Transaction = { value, description }
-
-    if (transactions) setTransactions(prev => [newTransaction, ...prev])
-    else setTransactions([newTransaction])
-
-    const localTransactions = localStorage.getItem('localTransactions')
-
-    const newLocalTransactions =
-      (localTransactions && JSON.parse(localTransactions)) || []
-
-    newLocalTransactions.push(newTransaction)
-
-    localStorage.setItem(
-      'localTransactions',
-      JSON.stringify(newLocalTransactions)
-    )
-  }
-
-  const balance =
-    transactions &&
-    transactions.reduce((curr, next) => {
-      return curr + parseFloat(next.value.replace(/\./g, '').replace(/,/g, '.'))
-    }, 0)
+  const { transactions } = useTransactions()
 
   return (
     <>
-      <Header balance={balance?.toLocaleString()} />
+      <Header />
       <s.Wrapper hasTransactions={!!transactions}>
-        <TransactionCard
-          onTransaction={({ value, description }) =>
-            onTransaction({ value, description })
-          }
-        />
+        <TransactionCard />
 
-        {transactions && <TransactionList transactions={transactions} />}
+        {transactions && <TransactionList />}
       </s.Wrapper>
     </>
   )

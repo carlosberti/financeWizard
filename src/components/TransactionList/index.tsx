@@ -1,17 +1,16 @@
 import TransactionListItem from 'components/TransactionListItem'
-import React, { TextareaHTMLAttributes } from 'react'
+import React from 'react'
 import * as s from './styles'
+import useTransactions from 'hooks/useTransactions'
 
-type Transaction = {
+export type Transaction = {
   value: string
   description: string
 }
 
-export type TransactionListProps = {
-  transactions: Transaction[] | null
-} & TextareaHTMLAttributes<HTMLTextAreaElement>
+const TransactionList = () => {
+  const { transactions } = useTransactions()
 
-const TransactionList = ({ transactions }: TransactionListProps) => {
   return (
     <s.Wrapper>
       {!!transactions &&

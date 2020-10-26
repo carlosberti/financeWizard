@@ -1,13 +1,11 @@
 import React from 'react'
 
 import TextField from 'components/TextField'
-import isValidValues from 'utils/isValidValues'
+import areValidValues from 'utils/areValidValues'
 import * as s from './styles'
 import TextArea from 'components/TextArea'
-
-export type TransactionCardProps = {
-  onTransaction: ({ value, description }: SingleTransactionProps) => void
-}
+import { Transaction } from 'components/TransactionList'
+import useTransactions from 'hooks/useTransactions'
 
 export type SingleTransactionProps = {
   value: string
@@ -19,11 +17,12 @@ const initialValue: SingleTransactionProps = {
   description: ''
 }
 
-const TransactionCard = ({ onTransaction }: TransactionCardProps) => {
+const TransactionCard = () => {
   const [singletransaction, setSingleTransaction] = React.useState<
     SingleTransactionProps
   >(initialValue)
   const [error, setError] = React.useState(false)
+  const { addTransaction } = useTransactions()
 
   const onChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -39,8 +38,14 @@ const TransactionCard = ({ onTransaction }: TransactionCardProps) => {
     setError(error)
   }
 
+  const onTransaction = ({ value, description }: Transaction) => {
+    const newTransaction: Transaction = { value, description }
+
+    addTransaction(newTransaction)
+  }
+
   const onClick = () => {
-    if (isValidValues(singletransaction, onValidate)) {
+    if (areValidValues(singletransaction, onValidate)) {
       onTransaction(singletransaction)
       setSingleTransaction(initialValue)
     }
