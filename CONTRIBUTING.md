@@ -1,6 +1,6 @@
 # Contribute to FinanceWizard
 
-FinanceWizard is an open-source project. All interests and efforts will be appreciate.
+FinanceWizard is an open-source project. All interests and efforts will be appreciated.
 
 Feel free to contribute with whatever you want: write issues, improve features or tests, write new features or tests and so on.
 
