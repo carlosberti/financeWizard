@@ -6,6 +6,13 @@ FinanceWizard is a WebApp made for make your expenses control easier. It's simpl
 
 ![](financeWizard.jpg)
 
+## Project modeling
+
+- The first step was to decide what technology to use. I wrote what were the project requirements and I decided to go with Nextjs because is the framework that I have been working in the past year and a half. It can serve satic HTML, what CRA does not support and I had a boilerplate that fit the problem (just needed some adjustments)
+- After decide the framework, I had to decide how I would built the project. I decided to go first with storybook, to easily see each component isolated and as this project was meant to be open source, having a storybook would be a great feature if the project grew a lot and more and more people contribute to it.
+- The next step would be to built the page itself and maybe fix some code
+- Then, the final step, once everything is right, it would be to refactor some code in order to make it better and more readable.
+
 ## Project links
 
 - [WebApp](https://finance-wizard.vercel.app/)
