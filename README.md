@@ -45,6 +45,8 @@ npm run dev
 yarn dev
 ```
 
+Open [http://localhost:3000/](http://localhost:3000/) in your browser
+
 ## Contributing
 
 If you feel like you have something to add to the project, please read our [Contributing Guide](CONTRIBUTING.md) before submitting a Pull Request.
