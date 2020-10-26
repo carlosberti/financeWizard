@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import GlobalStyles from 'styles/global'
+import TransactionsContextProvider from 'contexts/transactions'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -18,7 +19,9 @@ function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <GlobalStyles />
-      <Component {...pageProps} />
+      <TransactionsContextProvider>
+        <Component {...pageProps} />
+      </TransactionsContextProvider>
     </>
   )
 }
