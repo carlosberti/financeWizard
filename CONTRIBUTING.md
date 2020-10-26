@@ -1,14 +1,14 @@
 # Contribute to FinanceWizard
 
-FinanceWizard ia an open-source project. All interest and efforts will be appreciate.
+FinanceWizard is an open-source project. All interests and efforts will be appreciate.
 
 Feel free to contribute with whatever you want: write issues, improve features or tests, write new features or tests and so on.
 
 ## How to contribute
 
-- Fork this repository to your device
+- Fork this repository into your device
 - Code the solution that you are proposing
-- Commit to your branch using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
+- Commit to your branch using [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) guide
 - Open a Pull Request and wait
 
 Please make sure you're paying attention to project's lint.
