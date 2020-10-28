@@ -6,6 +6,8 @@ FinanceWizard is a WebApp made for make your expenses control easier. It's simpl
 
 ![](financeWizard.jpg)
 
+![](financeWizardMobile.jpg)
+
 ## Project modeling
 
 - The first step was to decide what technology to use. I wrote what were the project requirements and I decided to go with Nextjs because is the framework that I have been working in the past year and a half. It can serve satic HTML, what CRA does not support and I had a boilerplate that fit the problem (just needed some adjustments)
